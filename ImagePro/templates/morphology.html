@@ -1,0 +1,67 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="{% static 'css/uploadPhoto.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'js/trackbar.js' %}">
+    <link rel="stylesheet" href="{% static 'css/trackbars.css' %}"> -->
+
+    <title>Morphology</title>
+</head>
+<body>
+<main>
+    <button hx-get="{% url 'imagepro:erod' %}"
+            hx-trigger="click"
+            hx-target="#target"
+            hx-swap="innerHTML"
+            onclick="document.getElementById('target').style.display='block'"
+    >
+        erod
+    </button>
+
+    <button hx-get="{% url 'imagepro:dilafe' %}"
+            hx-trigger="click"
+            hx-target="#target"
+            hx-swap="innerHTML"
+            onclick="document.getElementById('target').style.display='block'"
+    >
+        dilafe
+    </button>
+    <button hx-get="{% url 'imagepro:morfopen' %}"
+            hx-trigger="click"
+            hx-target="#target"
+            hx-swap="innerHTML"
+            onclick="document.getElementById('target').style.display='block'"
+    >
+        morfopen
+    </button>
+    <button hx-get="{% url 'imagepro:morfclose' %}"
+            hx-trigger="click"
+            hx-target="#target"
+            hx-swap="innerHTML"
+            onclick="document.getElementById('target').style.display='block'"
+    >
+        morfclose
+    </button>
+    <button hx-get="{% url 'imagepro:morfgradiant' %}"
+            hx-trigger="click"
+            hx-target="#target"
+            hx-swap="innerHTML"
+            onclick="document.getElementById('target').style.display='block'"
+    >
+        morfgradiant
+    </button>
+
+    <script src="https://unpkg.com/htmx.org@1.8.6"
+				integrity="sha384-Bj8qm/6B+71E6FQSySofJOUjA/gq330vEqjFx9LakWybUySyI1IQHwPtbTU7bNwx"
+				crossorigin="anonymous">
+    </script>
+    <script src="/path/to/htmx.min.js"></script>
+</main>
+</body>
+</html>

@@ -1,0 +1,72 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/uploadPhoto.css' %}">
+
+    <title>NorbitFlow</title>
+</head>
+<body>
+
+
+    <button hx-get="{% url 'imagepro:colorspace' %}"
+            hx-trigger="click"
+            hx-target="#target"
+            hx-swap="innerHTML"
+            onclick="document.getElementById('target').style.display='block'"
+    >
+        Color Space
+    </button>
+
+    <button hx-get="{% url 'imagepro:morphology' %}"
+            hx-trigger="click"
+            hx-target="#target"
+            hx-swap="innerHTML"
+            onclick="document.getElementById('target').style.display='block'"
+    >
+        Morphology
+    </button>
+
+    <button hx-get="{% url 'imagepro:edge' %}"
+            hx-trigger="click"
+            hx-target="#target"
+            hx-swap="innerHTML"
+            onclick="document.getElementById('target').style.display='block'"
+    >
+        Edge Dedection
+    </button>
+
+    <button hx-get="{% url 'imagepro:blur' %}"
+            hx-trigger="click"
+            hx-target="#target"
+            hx-swap="innerHTML"
+            onclick="document.getElementById('target').style.display='block'"
+    >
+        Blur
+    </button>
+
+    <button hx-get="{% url 'imagepro:imgflip' %}"
+            hx-trigger="click"
+            hx-target="#target"
+            hx-swap="innerHTML"
+            onclick="document.getElementById('target').style.display='block'"
+    >
+        Image Flip
+    </button>
+
+    <div id="target">
+
+    </div>
+
+
+<script src="https://unpkg.com/htmx.org@1.8.6"
+				integrity="sha384-Bj8qm/6B+71E6FQSySofJOUjA/gq330vEqjFx9LakWybUySyI1IQHwPtbTU7bNwx"
+				crossorigin="anonymous">
+</script>
+<script src="/path/to/htmx.min.js"></script>
+</body>
+</html>
